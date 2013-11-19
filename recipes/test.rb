@@ -26,5 +26,5 @@ rightscale = RightApi::Client.new(YAML.load_file(File.join('/home, #{node['right
 
 puts rightscale.to_yaml
   EOH
-  only_if node['right_api_client']['test']
+  only_if { node['right_api_client']['test'] }
 end
