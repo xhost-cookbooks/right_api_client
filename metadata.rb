@@ -47,6 +47,7 @@ attribute "right_api_client/test",
   :display_name => "right_api_client Test",
   :description => "Whether to test connection with right_api_client.",
   :default => "true",
+  :choice => [ "true", "false" ],
   :recipes => [ "right_api_client", "right_api_client::test" ]
   
 attribute "right_api_client/configure_users",
