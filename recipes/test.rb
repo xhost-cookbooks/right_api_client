@@ -16,13 +16,13 @@
 # limitations under the License.
 
 ruby "test_right_api_client" do
-  user node['right_api_client']['configure_users'][0]
+  user node['right_api_client']['configure_users'].first
   cwd "/tmp"
   code <<-EOH
 require 'yaml'
 require 'right_api_client'
 
-rightscale = RightApi::Client.new(YAML.load_file(File.join('/home, #{node['right_api_client']['configure_users'][0]}, '.rightscale', 'right_api_client.yml')))
+rightscale = RightApi::Client.new(YAML.load_file(File.join('/home', '#{node['right_api_client']['configure_users'].first}', '.rightscale', 'right_api_client.yml')))
 
 puts rightscale.to_yaml
   EOH
