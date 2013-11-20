@@ -32,7 +32,8 @@ node['right_api_client']['configure_users'].each { |user|
     owner user
     variables({
       :account_id => node['right_api_client']['rightscale']['account_id'],
-      :email => user,
+      :email => node['right_api_client']['rightscale']['user'],
+      :password => node['right_api_client']['rightscale']['password'],
       :api_version => node['right_api_client']['rightscale']['api_version'],
       :api_url => node['right_api_client']['rightscale']['api_url']
     })
