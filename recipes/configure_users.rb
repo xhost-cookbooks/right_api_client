@@ -24,11 +24,13 @@ node['right_api_client']['configure_users'].each { |user|
   
   directory "/home/#{user}/.rightscale" do
     recursive true
+    mode 0700
+    owner user
   end
   
   template "/home/#{user}/.rightscale/right_api_client.yml" do
     source "right_api_client.yml.erb"
-    mode 0400
+    mode 0600
     owner user
     variables({
       :account_id => node['right_api_client']['rightscale']['account_id'],
