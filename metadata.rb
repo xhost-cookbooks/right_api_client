@@ -20,7 +20,7 @@ attribute "right_api_client/rightscale/account_id",
 attribute "right_api_client/rightscale/api_url",
   :display_name => "right_api_client API URL",
   :description => "The API base URL to use with right_api_client, e.g. https://us-4.rightscale.com.",
-  :default => "htts://us-3.rightscale.com",
+  :default => "https://us-3.rightscale.com",
   :recipes => [ "right_api_client", "right_api_client::configure_users" ],
   :choice => [ "https://us-3.rightscale.com", "https://us-4.rightscale.com", "https://my.rightscale.com", "https://jp-8.rightscale.com" ]
 
